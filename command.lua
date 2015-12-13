@@ -32,13 +32,12 @@ minetest.register_chatcommand("tpa", {
                 "size[7,2]" ..
                 "label[0,0;" .. name .. " " .. S("wants to teleport to you") .. "]" ..
                 "button_exit[0,1;2,1;button_yes;" .. S("Yes") .. "]" ..
-                "button_exit[2,1;2,1;button_no;" .. S("No") .. "]"
-            )
+                "button_exit[2,1;2,1;button_no;" .. S("No") .. "]")
 
             P = name;
         end
 
-        return true, "Joueur : " .. param .. "!"
+        return true, ""
     end
 })
 
@@ -51,10 +50,9 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 
     if fields.button_yes then
         -- Acceptation du TP
-        local pos = player:getpos()
+        --local pos = player:getpos()
         local player_demandeur = minetest.get_player_by_name(P)
-        minetest.chat_send_player(player:get_player_name(), "Position : " .. minetest.serialize(pos))
-        player_demandeur:setpos(pos)
+        player_demandeur:setpos(player:getpos())
     else
         -- Refus du TP
         minetest.show_formspec(P, "tpa:no_tp_cancelled",
