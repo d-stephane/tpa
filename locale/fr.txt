@@ -1,0 +1,7 @@
+Attention, please enter the name of the player you wish you teleporter = Attention, veuillez saisir le nom du joueur auquel vous souhaitez vous téléporter
+Note that the player you are trying to teleport you is not connected = Attention, le joueur auquel vous essayez de vous teleporter n'est pas connecté
+Close = Fermer
+wants to teleport to you = souhaite se téléporter vers vous
+Yes = Oui
+No = Non
+do not want you to teleport to him = ne veut pas que vous vous téléportiez à lui

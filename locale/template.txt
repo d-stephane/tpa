@@ -1,0 +1,7 @@
+Attention, please enter the name of the player you wish you teleporter =
+Note that the player you are trying to teleport you is not connected =
+Fermer =
+wants to teleport to you =
+Yes =
+No =
+do not want you to teleport to him =
