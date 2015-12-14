@@ -30,7 +30,7 @@ minetest.register_chatcommand("tpa", {
             -- Le joueur est présent, on affiche une demande de TP
             minetest.show_formspec(param, "tpa:ok_ask_player",
                 "size[7,2]" ..
-                "label[0,0;" .. name .. " " .. S("wants to teleport to you") .. "]" ..
+                "label[0,0;\"" .. name .. "\" " .. S("wants to teleport to you") .. "]" ..
                 "button_exit[0,1;2,1;button_yes;" .. S("Yes") .. "]" ..
                 "button_exit[2,1;2,1;button_no;" .. S("No") .. "]")
 
@@ -50,14 +50,13 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 
     if fields.button_yes then
         -- Acceptation du TP
-        --local pos = player:getpos()
         local player_demandeur = minetest.get_player_by_name(P)
         player_demandeur:setpos(player:getpos())
     else
         -- Refus du TP
         minetest.show_formspec(P, "tpa:no_tp_cancelled",
             "size[7,2]" ..
-            "label[0,0;" .. player:get_player_name() .. " " .. S("do not want you to teleport to him") .. "]" ..
+            "label[0,0;\"" .. player:get_player_name() .. "\" " .. S("do not want you to teleport to him") .. "]" ..
             "button_exit[0,1;2,1;exit;" .. S("Close") .. "]")
     end
 
